@@ -1,0 +1,12 @@
+entrada = int(input())
+
+def fibonacci(n):
+  text = " "
+  if n == 0:
+    return "b"
+  if n == 1:
+    return "a"
+  else:
+    return(fibonacci(n-1) + fibonacci(n-2))
+
+print(fibonacci(entrada))

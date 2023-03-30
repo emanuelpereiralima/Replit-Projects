@@ -1,0 +1,19 @@
+entrada = input().split()
+contador = 0
+
+for x in range(len(entrada)):
+ if entrada[x] == 'OP' and entrada[x - 2] != "LOOP":
+   contador += int(entrada[x + 1])
+ if entrada[x] == "LOOP":
+   temp = x
+   cont = int(entrada[x + 1])
+   soma = 0
+   while temp < len(entrada):
+     if(entrada[temp] == "FIMLOOP"):
+       break
+     if (entrada[temp] == "OP"):
+       soma += int(entrada[temp + 1])
+       entrada[temp] = " "
+     temp += 1
+   contador += (cont * soma)
+print(contador)

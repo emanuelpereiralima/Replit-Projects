@@ -1,0 +1,12 @@
+def funcao_combinatoria(n , k):
+  if k == 0:
+    return 1
+  if k == 1:
+    return n
+  else:
+    return (n - ( k - 1)) / k * (funcao_combinatoria(n , k - 1))
+
+
+
+entradas = input("Digite os valores para n e k, respectivamente:").split()
+print(funcao_combinatoria(int(entradas[0]),int(entradas[1])))

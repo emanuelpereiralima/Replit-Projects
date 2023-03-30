@@ -1,0 +1,38 @@
+entrada = input().split()
+contador = 0
+
+for x in range(len(entrada)):
+  if entrada[x] == "MEM":
+    contador += 10
+  
+  if entrada[x] == "IO":
+    contador += 30
+  
+  if entrada[x] == "PROCMULT":
+    contador += 10
+  
+  if entrada[x] == "PROCSUM":
+    contador += 1
+  
+  if entrada[x] == "LOOP":
+    quantidade_repeticoes = int(entrada[x + 1])
+    soma_loop = 0
+    while entrada[x] != "FIMLOOP":
+      if entrada[x] == "MEM":
+        soma_loop += 10
+
+      if entrada[x] == "PROCSUM":
+        soma_loop += 1
+      
+      if entrada[x] == "IO":
+        soma_loop += 30
+
+      if entrada[x] == "PROCMULT":
+        soma_loop += 10
+      entrada[x] = entrada[x].lower()
+      x += 1
+    contador += (soma_loop * quantidade_repeticoes)
+
+
+
+print(contador)

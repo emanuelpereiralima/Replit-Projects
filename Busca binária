@@ -1,0 +1,13 @@
+def busca_binaria(lista, valor, esquerda, direita,contador):
+	meio = (esquerda + direita) // 2 
+	aux_valor = lista[meio]
+	if valor == aux_valor:
+		return contador + 1
+	elif valor > aux_valor:
+		return busca_binaria(lista, valor, meio, direita,contador + 1)
+	return busca_binaria(lista, valor, esquerda, meio,contador + 1)
+
+entrada = input().split()
+entrada = list(map(int,entrada))
+valor = entrada.pop(0)
+print(busca_binaria(entrada,valor,entrada.index(entrada[0]),entrada.index(entrada[-1]),0))

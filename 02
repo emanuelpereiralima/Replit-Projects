@@ -1,0 +1,18 @@
+entrada = input().split()
+result = []
+
+for x in range(len(entrada)):
+  entrada[x] = int(entrada[x])
+
+
+def contador_garrafa(n):
+  if n == 0:
+    return 1
+  else:
+    return n + contador_garrafa(int(n/3))
+
+for x in entrada:
+  result.append(contador_garrafa(x))
+
+
+print(*result)

@@ -1,0 +1,21 @@
+entrada = input().split()
+Linhas = int(entrada[0])
+Colunas = int(entrada[1])
+Matriz = []
+
+for x in range(len(entrada)):
+  if x > 2:
+    break
+  else:
+    entrada.pop(0)
+
+for x in range(Linhas):
+    Matriz.append(entrada[x])
+
+for v in range(Linhas):
+  matriz2 = ""
+  for z in range(Colunas):
+    matriz2 = matriz2 + str(Matriz[v][z]).zfill(len(str(0))) + " "
+  print(matriz2)
+
+print(Matriz) 

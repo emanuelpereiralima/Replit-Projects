@@ -1,0 +1,17 @@
+import math
+
+def connectedSum(graph_nodes, graph_from, graph_to):
+    conections = {}
+    result = 0
+    # Write your code here
+    for x in graph_from:
+        if x not in conections:
+            conections[x] = 1
+        if x in conections:
+            conections[x] += 1
+    for x in conections:
+      result += math.ceil(math.sqrt(conections[x]))
+      graph_nodes -= conections[x]
+    return result
+
+print(connectedSum(8,[8, 5, 7, 8],[1, 8, 3, 6]))
